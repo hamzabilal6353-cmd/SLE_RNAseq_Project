@@ -1,0 +1,13 @@
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.rds
+*.RDS
+cache/
+recount3/
+data/*.gz
+data/*.fastq
+data/*.fastq.gz
+data/*.bam
+data/*.bai

@@ -1,0 +1,10 @@
+"Metric","Value"
+"Total samples",117
+"SLE samples",99
+"Healthy control samples",18
+"Genes tested",23528
+"Significant genes",959
+"Upregulated genes",873
+"Downregulated genes",86
+"Upregulated GO pathways",220
+"Downregulated GO pathways",37
