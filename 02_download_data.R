@@ -4,37 +4,37 @@ library(recount3)
 # Allow extra time for downloading
 options(timeout = 1200)
 
-# Create the data folder
+# Create a folder for the data
 dir.create("data", showWarnings = FALSE)
 
-# Get available human RNA-seq projects
+# Get the list of available human RNA-seq projects
 human_projects <- available_projects()
 
-# Find the SLE project
+# Find the SLE study: SRP062966 / GSE72509
 project_info <- subset(
   human_projects,
   project == "SRP062966" &
     project_type == "data_sources"
 )
 
-# Show the project information
+# Display the matching project
 print(project_info)
 
-# Confirm that the project was found
+# Stop if the study was not found
 if (nrow(project_info) == 0) {
   stop("SRP062966 was not found in recount3.")
 }
 
-# Download the gene-count dataset
+# Download and create the gene-count dataset
 sle_data <- create_rse(project_info)
 
-# Save the downloaded dataset
+# Save it so it does not need to be downloaded again
 saveRDS(
   sle_data,
   file = "data/GSE72509_SLE_recount3.rds"
 )
 
-# Show the number of genes and samples
+# Display the number of genes and samples
 print(dim(sle_data))
 
 print("SLE RNA-seq data downloaded and saved successfully")
