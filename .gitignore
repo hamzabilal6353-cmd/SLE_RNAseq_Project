@@ -11,3 +11,4 @@ data/*.fastq
 data/*.fastq.gz
 data/*.bam
 data/*.bai
+.RDataTmp
